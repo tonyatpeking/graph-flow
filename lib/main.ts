@@ -4,6 +4,8 @@ export function helloAnything(thing: string): string {
     return `Hello ${thing}!`
 }
 
+export { hellos } from './utils/func'
+
 class TriangleScene {
 
     scene: THREE.Scene;

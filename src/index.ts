@@ -2,7 +2,7 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
-import TriangleScene, { helloAnything } from '../lib/main.ts'
+import TriangleScene, { helloAnything, hellos } from '../lib/main.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -24,5 +24,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 console.log(helloAnything('world'))
+console.log(hellos('world'))
 
 new TriangleScene();

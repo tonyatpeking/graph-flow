@@ -1,6 +1,6 @@
 {
   "name": "@tonyatpeking/graph-flow",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "",
   "main": "./dist/graph-flow.umd.cjs",
@@ -21,7 +21,7 @@
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "pnpm run build && pnpm version patch"
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "three": "^0.165.0"

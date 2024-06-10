@@ -12,7 +12,7 @@ export default defineConfig({
             entry: resolve(__dirname, 'lib/main.ts'),
             name: 'GraphFlow',
             // the proper extensions will be added
-            fileName: 'graph-flow',
+            fileName: 'main',
             formats: ['es']
         },
         copyPublicDir: false,

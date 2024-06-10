@@ -2,6 +2,19 @@
 JavaScript client-side library for graph (data structure) rendering and animation
 
 
+## Installation
+
+- `pnpm i @tonyatpeking/graph-flow`
+- `pnpm rebuild` Rebuild if node-modules is corrupt
+
+
+## Usage
+
+```js
+
+import TriangleScene, { helloAnything, hellos } from '@tonyatpeking/graph-flow';
+
+```
 
 ## Commands
 

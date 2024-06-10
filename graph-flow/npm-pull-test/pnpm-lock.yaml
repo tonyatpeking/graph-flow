@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@tonyatpeking/graph-flow':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.2
+        version: 0.0.2
     devDependencies:
       typescript:
-        specifier: ^5.2.2
+        specifier: ^5.4.5
         version: 5.4.5
       vite:
-        specifier: ^5.2.0
+        specifier: ^5.2.13
         version: 5.2.13
 
 packages:
@@ -239,8 +239,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tonyatpeking/graph-flow@0.0.1':
-    resolution: {integrity: sha512-Wi8eBzk6giIcVjCh2KrqnDmNn4Qel0/tr2p8yBtxhpghHu1FvM8/sD4R99WUYXmVG4q2C7lHiF+kngXiMog82Q==}
+  '@tonyatpeking/graph-flow@0.0.2':
+    resolution: {integrity: sha512-5CNrKtk+a3QZSkwTo1bPlw9Yy7d6MJlpS7gCoD7pEl8AcEixyvSivUztsIY6T4RYcYj5Teoyv5K+x7vzpcO3bg==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -431,7 +431,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
-  '@tonyatpeking/graph-flow@0.0.1':
+  '@tonyatpeking/graph-flow@0.0.2':
     dependencies:
       three: 0.165.0
 

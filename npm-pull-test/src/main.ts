@@ -1,5 +1,6 @@
 import './style.css'
-import { App } from '@tonyatpeking/graph-flow';
+import App from '@tonyatpeking/graph-flow';
+
 
 const container = document.querySelector<HTMLDivElement>('#app-container')!
 

@@ -5,7 +5,7 @@ import * as BABYLON from "@babylonjs/core";
 
 
 
-export default class App {
+class App {
 
     canvas!: HTMLCanvasElement;
     appContainer!: HTMLDivElement;
@@ -97,4 +97,4 @@ export default class App {
     }
 }
 
-//export { App }
+export { App }

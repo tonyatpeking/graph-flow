@@ -16,8 +16,8 @@ export default defineConfig({
             formats: ['es']
         },
         copyPublicDir: false,
-
-
+        minify: false,
+        sourcemap: true,
         rollupOptions: {
             external: ['@babylonjs/core', '@babylonjs/core/Debug/debugLayer', '@babylonjs/inspector'],
         }

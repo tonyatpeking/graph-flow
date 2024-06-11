@@ -2,13 +2,6 @@ import "@babylonjs/core/Debug/debugLayer";
 import "@babylonjs/inspector";
 import * as BABYLON from "@babylonjs/core";
 
-export { hellos } from './utils/func'
-
-export function helloAnything(thing: string): string {
-    return `Hello ${thing}!`
-}
-
-
 
 
 
@@ -100,7 +93,7 @@ class App {
         // Move the sphere upward 1/2 its height
         sphere.position.y = 1;
         // Our built-in 'ground' shape. Params: name, options, scene
-        var ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, this.scene);
+        BABYLON.MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, this.scene);
     }
 }
 

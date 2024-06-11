@@ -19,7 +19,7 @@ export default defineConfig({
 
 
         rollupOptions: {
-            external: ['three']
+            external: ['@babylonjs/core']
         }
         //     // make sure to externalize deps that shouldn't be bundled
         //     // into your library

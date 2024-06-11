@@ -1,6 +1,6 @@
 {
   "name": "@tonyatpeking/graph-flow",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "",
   "main": "./dist/main.umd.cjs",
@@ -24,9 +24,10 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "three": "^0.165.0"
+    "@babylonjs/core": "^7.10.2"
   },
   "devDependencies": {
+    "@babylonjs/inspector": "^7.10.2",
     "@types/node": "^20.14.2",
     "@types/three": "^0.165.0",
     "typescript": "^5.2.2",

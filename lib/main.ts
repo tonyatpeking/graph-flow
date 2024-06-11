@@ -1,53 +1,58 @@
-import * as THREE from 'three'
+import "@babylonjs/core/Debug/debugLayer";
+import "@babylonjs/inspector";
+import { Engine, Scene, ArcRotateCamera, Vector3, HemisphericLight, Mesh, MeshBuilder } from "@babylonjs/core";
+
+export { hellos } from './utils/func'
 
 export function helloAnything(thing: string): string {
     return `Hello ${thing}!`
 }
 
-export { hellos } from './utils/func'
 
-class TriangleScene {
 
-    scene: THREE.Scene;
-    camera: THREE.PerspectiveCamera;
-    renderer: THREE.WebGLRenderer;
-    geometry: THREE.BufferGeometry;
-    material: THREE.MeshBasicMaterial;
-    triangle: THREE.Mesh;
 
-    constructor() {
-        this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(this.renderer.domElement);
 
-        this.geometry = new THREE.BufferGeometry();
-        const vertices = new Float32Array([
-            0.0, 1.0, 0.0,
-            -1.0, -1.0, 0.0,
-            1.0, -1.0, 0.0
-        ]);
-        this.geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+class App {
+    constructor(canvas?: HTMLCanvasElement | null) {
+        // create the canvas html element and attach it to the webpage
 
-        this.material = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
-        this.triangle = new THREE.Mesh(this.geometry, this.material);
+        if (!canvas) {
+            canvas = document.createElement("canvas");
+            canvas.id = "app-canvas";
+            document.body.appendChild(canvas);
+        }
 
-        this.scene.add(this.triangle);
-        this.camera.position.z = 5;
 
-        this.animate = this.animate.bind(this);
-        this.animate();
-    }
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
 
-    animate() {
-        requestAnimationFrame(this.animate);
+        // initialize babylon scene and engine
+        var engine = new Engine(canvas, true);
+        var scene = new Scene(engine);
 
-        this.triangle.rotation.x += 0.01;
-        this.triangle.rotation.y += 0.01;
+        var camera: ArcRotateCamera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, Vector3.Zero(), scene);
+        camera.attachControl(canvas, true);
+        var light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
+        var sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 1 }, scene);
 
-        this.renderer.render(this.scene, this.camera);
+        // hide/show the Inspector
+        window.addEventListener("keydown", (ev) => {
+            // Shift+Ctrl+Alt+I
+            if (ev.shiftKey && ev.key === 'I') {
+                if (scene.debugLayer.isVisible()) {
+                    scene.debugLayer.hide();
+                } else {
+                    scene.debugLayer.show();
+                }
+            }
+        });
+
+        // run the main render loop
+        engine.runRenderLoop(() => {
+            scene.render();
+        });
     }
 }
 
-export default TriangleScene;
+export { App }

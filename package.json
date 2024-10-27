@@ -25,7 +25,8 @@
     "prepublishOnly": "pnpm run build:lib"
   },
   "dependencies": {
-    "@babylonjs/core": "^7.10.2"
+    "@babylonjs/core": "^7.10.2",
+    "vite-plugin-top-level-await": "^1.4.4"
   },
   "devDependencies": {
     "@babylonjs/inspector": "^7.10.2",

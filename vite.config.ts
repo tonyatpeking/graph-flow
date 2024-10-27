@@ -1,13 +1,19 @@
 import { resolve } from 'path'
 import { defineConfig, UserConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import topLevelAwait from "vite-plugin-top-level-await";
 
 export default defineConfig(({ mode }): UserConfig => {
   const isExample = mode === 'examples';
   const config: UserConfig = {
     root: isExample ? 'examples' : '.',
     plugins: [
-      dts({ include: ['lib'] })
+      dts({ include: ['lib'] }),topLevelAwait({
+        // The export name of top-level await promise for each chunk module
+        promiseExportName: "__tla",
+        // The function to generate import names of top-level await promise in each chunk module
+        promiseImportName: i => `__tla_${i}`
+      })
     ],
     build: {
       outDir: isExample ? 'dist' : 'dist-lib',
@@ -23,7 +29,7 @@ export default defineConfig(({ mode }): UserConfig => {
             },
         external: isExample ? [] : ['@babylonjs/core', '@babylonjs/core/Debug/debugLayer', '@babylonjs/inspector'],
       },
-      target: ['es2020'],
+      target: ['es2022'],  // Changed from es2020 to es2022
     },
   };
 

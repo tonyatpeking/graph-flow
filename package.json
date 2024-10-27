@@ -3,16 +3,16 @@
   "version": "0.0.13",
   "type": "module",
   "description": "",
-  "main": "./dist/main.umd.js",
-  "module": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist-lib/main.umd.js",
+  "module": "./dist-lib/main.js",
+  "types": "./dist-lib/main.d.ts",
   "files": [
-    "dist"
+    "dist-lib"
   ],
   "exports": {
     ".": {
-      "import": "./dist/main.js",
-      "require": "./dist/main.umd.js"
+      "import": "./dist-lib/main.js",
+      "require": "./dist-lib/main.umd.js"
     }
   },
   "scripts": {
@@ -22,7 +22,7 @@
     "build:lib": "tsc --p ./tsconfig-build.json && vite build",
     "build:examples": "vite build --mode examples",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build:lib"
   },
   "dependencies": {
     "@babylonjs/core": "^7.10.2"

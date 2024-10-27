@@ -17,10 +17,10 @@ import {App} from '@tonyatpeking/graph-flow';
 
 ## Commands
 
-- `pnpm run build` - Build both the library and examples. Outputs to `dist` folder.
-- `pnpm run dev` - Start the development server. Entry point is `examples/index.html`.
-- `pnpm run dev --feature={some-feature}` - Start the development server. Entry point is `examples/{some-feature}.html`.
-- `pnpm run pub` - Publish to npm. <https://www.npmjs.com/package/@tonyatpeking/graph-flow>
+- `npm run build` - Build both the library and examples. Outputs to `dist` folder.
+- `npm run dev` - Start the development server. Entry point is `examples/index.html`.
+- `npm run dev --feature={some-feature}` - Start the development server. Entry point is `examples/{some-feature}.html`.
+- `npm run pub` - Publish to npm. <https://www.npmjs.com/package/@tonyatpeking/graph-flow>
 
 
 ## Examples

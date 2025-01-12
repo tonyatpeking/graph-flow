@@ -32,10 +32,19 @@ jobs:
       - name: Copy example files to dist root
         run: |
           mkdir -p dist/
-          cp -r examples/dist-examples/ dist/ || true
+          if [ -d "examples/dist-examples/" ]; then
+            cp -r examples/dist-examples/ dist/
+          else
+            echo "Directory 'examples/dist-examples/' not found. Skipping copy step."
+          fi
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Set deployment URL
+        if: success()
+        run: echo "page_url=https://${{ github.repository_owner }}.github.io/${{ github.repository }}" >> $GITHUB_ENV

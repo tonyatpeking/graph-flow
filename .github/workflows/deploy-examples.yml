@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload the build output directory
-          path: "examples/dist-examples/"
+          path: "/examples/dist-examples/"
 
       - name: Deploy to GitHub Pages
         id: deployment

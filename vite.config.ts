@@ -8,7 +8,7 @@ export default defineConfig(({ mode }): UserConfig => {
   const config: UserConfig = {
     root: isExample ? 'examples' : '.',
     plugins: [
-      dts({ include: ['lib'] }),topLevelAwait({
+      dts({ include: ['lib'] }), topLevelAwait({
         // The export name of top-level await promise for each chunk module
         promiseExportName: "__tla",
         // The function to generate import names of top-level await promise in each chunk module
@@ -16,17 +16,18 @@ export default defineConfig(({ mode }): UserConfig => {
       })
     ],
     build: {
-      outDir: isExample ? 'dist' : 'dist-lib',
+      outDir: isExample ? 'dist-examples' : 'dist-lib',
       emptyOutDir: true,
       rollupOptions: {
-        input: isExample 
+        input: isExample
           ? {
-              index: resolve(__dirname, 'examples/index.html'),
-              'hello-world': resolve(__dirname, 'examples/hello-world.html'),
-            }
+            // Entry point for the main example page at examples/index.html
+            index: resolve(__dirname, 'examples/index.html'),
+            'hello-world': resolve(__dirname, 'examples/hello-world.html'),
+          }
           : {
-              main: resolve(__dirname, 'lib/main.ts')
-            },
+            main: resolve(__dirname, 'lib/main.ts')
+          },
         external: isExample ? [] : ['@babylonjs/core', '@babylonjs/core/Debug/debugLayer', '@babylonjs/inspector'],
       },
       target: ['es2022'],  // Changed from es2020 to es2022

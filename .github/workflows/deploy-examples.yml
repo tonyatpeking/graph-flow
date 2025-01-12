@@ -42,16 +42,7 @@ jobs:
         run: pnpm install
 
       - name: Build project
-        run: pnpm run build
-
-      - name: Copy example files to dist root
-        run: |
-          mkdir -p dist/
-          if [ -d "examples/dist-examples/" ]; then
-            cp -r examples/dist-examples/* dist/
-          else
-            echo "Directory 'examples/dist-examples/' not found. Skipping copy step."
-          fi
+        run: pnpm run build:github-pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -60,7 +51,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload the build output directory
-          path: "./dist"
+          path: "examples/dist-examples/"
 
       - name: Deploy to GitHub Pages
         id: deployment

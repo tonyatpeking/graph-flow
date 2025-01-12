@@ -48,7 +48,7 @@ jobs:
         run: |
           mkdir -p dist/
           if [ -d "examples/dist-examples/" ]; then
-            cp -r examples/dist-examples/ dist/
+            cp -r examples/dist-examples/* dist/
           else
             echo "Directory 'examples/dist-examples/' not found. Skipping copy step."
           fi

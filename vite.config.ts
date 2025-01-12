@@ -4,11 +4,11 @@ import dts from 'vite-plugin-dts'
 import topLevelAwait from "vite-plugin-top-level-await";
 
 export default defineConfig(({ mode }): UserConfig => {
-  const isExample = mode === 'examples';
+  const isExample = mode === 'examples' || mode === 'github-pages';
   const isGithubPages = mode === 'github-pages';
   const config: UserConfig = {
     base: isGithubPages ? '/graph-flow/' : '/',
-    root: (isExample || isGithubPages) ? 'examples' : '.',
+    root: isExample ? 'examples' : '.',
     plugins: [
       dts({ include: ['lib'] }), topLevelAwait({
         // The export name of top-level await promise for each chunk module

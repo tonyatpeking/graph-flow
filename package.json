@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "dev": "vite --config vite.config.ts --mode development --open examples/${npm_config_feature:-index}.html",
+    "dev": "vite --config vite.config.ts --mode development --open examples/index.html",
     "pub": "pnpm version patch -f && git push && pnpm publish --access public --no-git-checks",
     "build": "pnpm run build:lib && pnpm run build:examples",
     "build:lib": "tsc --p ./tsconfig-build.json && vite build",
@@ -25,16 +25,17 @@
     "prepublishOnly": "pnpm run build:lib"
   },
   "dependencies": {
-    "@babylonjs/core": "^7.10.2",
+    "@babylonjs/core": "^7.43.0",
     "vite-plugin-top-level-await": "^1.4.4"
   },
   "devDependencies": {
-    "@babylonjs/inspector": "^7.10.2",
-    "@types/node": "^20.14.2",
-    "@types/three": "^0.165.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.9.1"
+    "@babylonjs/inspector": "^7.43.0",
+    "@types/node": "^22.10.5",
+    "@types/three": "^0.172.0",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.5.0"
   },
   "keywords": [
     "graph",

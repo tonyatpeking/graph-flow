@@ -21,7 +21,6 @@ import {App} from '@tonyatpeking/graph-flow';
     - `npm run build:lib` - Build only the library. Outputs to `dist-lib` folder.
     - `npm run build:examples` - Build only the examples. Outputs to `dist-examples` folder.
 - `npm run dev` - Start the development server. Entry point is `examples/index.html`.
-- `npm run dev --feature={some-feature}` - Start the development server. Entry point is `examples/{some-feature}.html`.
 - `npm run pub` - Publish to npm. <https://www.npmjs.com/package/@tonyatpeking/graph-flow>
 
 

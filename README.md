@@ -45,4 +45,46 @@ You can view the examples at: https://[your-github-username].github.io/graph-flo
 
 ## Dataflow
 
-- CPU Data <-> Compute Shader -> Fragment Shader
+- Default
+- CPU Data <-> Compute Shader -> Fragment Shade
+
+- Configurable via graphs
+- bootstrapping
+    - dataflow should be configurable via graphs
+    - should not need to touch js after initial setup
+
+## Data Format
+- Eventaully can support all, and conversion should be relatively straightforward, but what should be the default / starting format?
+- JSON
+    - Too many brackets
+    - Harder to read / write for humans
+- YAML
+- TOML
+    - Array of Tables synax is a bit weird
+    - [[nodes]]
+    - Nesting syntax is also a bit weird as you need to specify the full path
+- D2
+- Dot
+- Mermaid
+- CSV
+- Neo4j
+- Custom format
+
+## Goals
+
+- Ease of use
+- Large scale graph rendering
+- Fast
+- Animation
+- Customizable
+    - Custom dataflow pipeline (the order and interaction between different shaders and CPU / GPU memory)
+    - Custom rendering (fragment shader)
+    - Custom logic (compute shader)
+- Text
+    - Copy / paste via html element
+- Images
+- Juice
+- Interactive
+    - Clickable nodes
+- 2 way communication between GPU and CPU
+    - Saving entire simulation state from GPU to disk

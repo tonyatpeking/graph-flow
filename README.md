@@ -58,6 +58,8 @@ You can view the examples at: https://[your-github-username].github.io/graph-flo
 - JSON
     - Too many brackets
     - Harder to read / write for humans
+- JSON Lines
+    - https://jsonlines.org/
 - YAML
 - TOML
     - Array of Tables synax is a bit weird
@@ -75,7 +77,7 @@ You can view the examples at: https://[your-github-username].github.io/graph-flo
 - Ease of use
 - Large scale graph rendering
 - Fast
-- Animation
+- Animation and effects
 - Customizable
     - Custom dataflow pipeline (the order and interaction between different shaders and CPU / GPU memory)
     - Custom rendering (fragment shader)
@@ -88,3 +90,8 @@ You can view the examples at: https://[your-github-username].github.io/graph-flo
     - Clickable nodes
 - 2 way communication between GPU and CPU
     - Saving entire simulation state from GPU to disk
+    - Get edge / node id from x, y position
+    - Get edge / node ids from bbox
+- HTML for rendering and editing rich text
+- Incremental bi-directional updates
+- 

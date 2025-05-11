@@ -94,3 +94,5 @@ You can view the examples at: https://[your-github-username].github.io/graph-flo
     - Get edge / node ids from bbox
 - HTML for rendering and editing rich text
 - Incremental bi-directional updates
+
+- Test

@@ -70,6 +70,7 @@ You can view the examples at: https://[your-github-username].github.io/graph-flo
 - Mermaid
 - CSV
 - Neo4j
+  - Index-free adjacency
 - Custom format
 
 ## Goals
@@ -95,4 +96,27 @@ You can view the examples at: https://[your-github-username].github.io/graph-flo
 - HTML for rendering and editing rich text
 - Incremental bi-directional updates
 
-- Test
+## Ideas
+
+- Can we have optimizations by liminting the nubmer of edges a node can have? E.g. only allow 6 edges per node, nodes that have more than 6 edges are split into multiple nodes?
+
+## MVP TODO
+
+- [ ] Initial data format selection
+- [ ] Initial data format reading / writing to disk
+- [ ] Pass data to GPU
+- [ ] Render inital nodes and edges
+- [ ] Camera controls
+- [ ] First pass node force directed layout
+- [ ] Pass data GPU -> CPU -> disk
+- [ ] Refactor and clean up code
+- [ ] Update docs
+- [ ] Write test cases
+- [ ] Unit and integration tests: Disk -> CPU -> GPU -> Snapshot -> Force Layout -> Snapshot -> CPU -> Disk
+
+## Resources
+
+- https://github.com/harp-lab/GraphWaGu
+- https://gpupuzzles.answer.ai/puzzles
+- https://siboehm.com/articles/22/CUDA-MMM
+- https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation
